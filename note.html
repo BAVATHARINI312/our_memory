@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Note ♡</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #292238;
+    color: #493c3b;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:
+      radial-gradient(ellipse at top, #78647d66, transparent 60%),
+      linear-gradient(135deg, #30263e, #594456, #27243a);
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    width: min(100%, 950px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+header a {
+    color: #fff0e9;
+    text-decoration: none;
+}
+
+.music {
+    border: 1px solid #f4cbd3;
+    background: #f4cbd322;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: min(100%, 720px);
+    padding: 35px 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.intro {
+    color: #f6d9dd;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+
+h1 {
+    color: #fff0e9;
+    font-size: clamp(38px, 7vw, 65px);
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.letter {
+    width: min(100%, 620px);
+    background: #f4e6d2;
+    background-image:
+      repeating-linear-gradient(
+        transparent 0 35px,
+        #9c846022 36px
+      );
+    padding: 45px 38px;
+    border-radius: 4px;
+    box-shadow: 0 20px 65px #0008;
+    position: relative;
+    transform: rotate(-1deg);
+    animation: letterOpen 1.3s ease both;
+}
+
+.letter::before {
+    content: "♡";
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    color: #bd858c;
+    font-size: 25px;
+}
+
+.letter p {
+    font-size: clamp(16px, 2.5vw, 19px);
+    line-height: 2;
+    text-align: left;
+    margin-bottom: 17px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    color: #8a5e68;
+    margin-top: 25px;
+}
+
+.final-line {
+    color: #ffe2e7;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 35px;
+    line-height: 1.8;
+}
+
+.heart {
+    display: inline-block;
+    color: #ffc3d0;
+    font-size: 25px;
+    animation: heartbeat 1.7s infinite;
+}
+
+footer {
+    color: #e9d5df;
+    letter-spacing: 3px;
+    font-size: 11px;
+    padding: 15px;
+}
+
+.floating {
+    position: absolute;
+    color: #ffd7df;
+    opacity: .5;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.f1 { top: 18%; left: 10%; font-size: 30px; }
+.f2 { top: 55%; right: 9%; font-size: 25px; animation-delay: 1s; }
+.f3 { bottom: 15%; left: 18%; font-size: 22px; animation-delay: 2s; }
+.f4 { top: 30%; right: 18%; font-size: 18px; animation-delay: 3s; }
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform: translateY(40px) rotate(-4deg) scale(.94);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-1deg) scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-20px) rotate(12deg); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+@media(max-width: 500px) {
+    .letter { padding: 35px 23px; }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+    <header>
+        <a href="lastmeet.html">← Previous Memory</a>
+        <button class="music" id="musicButton" onclick="toggleMusic()">
+            ♫ Play Music
+        </button>
+    </header>
+
+    <span class="floating f1">✦</span>
+    <span class="floating f2">♡</span>
+    <span class="floating f3">✧</span>
+    <span class="floating f4">☾</span>
+
+    <main>
+        <p class="intro">THE LAST PAGE OF OUR LITTLE STORY</p>
+
+        <h1>A Little Note ♡</h1>
+
+        <article class="letter">
+            <p>Dear memories,</p>
+
+            <p>
+                I returned home, but a little part of those days
+                stayed with me.
+            </p>
+
+            <p>
+                The production line, the coffee conversations,
+                the Instagram messages, the long calls, the gifts,
+                and that drizzling evening at the railway station.
+            </p>
+
+            <p>
+                Some moments were ordinary when they happened.
+                Only later did I realise how special they had become.
+            </p>
+
+            <p>
+                It was never a story that needed a name.
+                It was simply a bond, and I wanted to preserve it here.
+            </p>
+
+            <p class="signature">
+                With a smile,<br>
+                The girl who remembers ♡
+            </p>
+        </article>
+
+        <p class="final-line">
+            Not every memory needs a tomorrow.<br>
+            Some are beautiful just as they were.
+            <br><span class="heart">♡</span>
+        </p>
+    </main>
+
+    <footer>SOME BONDS HAVE NO NAME ♡</footer>
+
+    <audio id="backgroundMusic" loop>
+        <source src="../music/love.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<script>
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play().then(() => {
+            musicButton.textContent = "♫ Pause Music";
+        }).catch(() => {
+            musicButton.textContent = "♫ Try Music Again";
+        });
+    } else {
+        music.pause();
+        musicButton.textContent = "♫ Play Music";
+    }
+}
+</script>
+
+</body>
+</html>

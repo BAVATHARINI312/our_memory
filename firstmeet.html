@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our First Meet ♡</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #171b39, #292541, #493047);
+    color: #fff0df;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+header a {
+    color: #ffe4d4;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.music, .nav-btn {
+    background: #f7c2b5;
+    color: #4c3040;
+    border: 1px solid #ffe1d5;
+    border-radius: 30px;
+    padding: 11px 20px;
+    transition: .3s;
+}
+
+.music:hover, .nav-btn:hover {
+    transform: translateY(-3px);
+    background: #ffddd0;
+}
+
+.page {
+    width: min(1100px, 92%);
+    margin: 15px auto 40px;
+    text-align: center;
+}
+
+.eyebrow {
+    letter-spacing: 5px;
+    color: #f4b6a9;
+    font-size: 12px;
+}
+
+h1 {
+    font-size: clamp(36px, 6vw, 58px);
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+.intro {
+    color: #f5d6ca;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.slideshow {
+    position: relative;
+    margin: 30px auto;
+    width: min(100%, 850px);
+    min-height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    animation: appear .8s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    display: block;
+    width: min(100%, 780px);
+    max-height: 440px;
+    object-fit: contain;
+    margin: auto;
+    border: 7px solid #fff0df;
+    border-radius: 8px;
+    box-shadow: 0 15px 50px #0005;
+}
+
+.caption {
+    font-size: 21px;
+    line-height: 1.7;
+    margin: 20px auto;
+    max-width: 650px;
+    color: #ffe5d7;
+}
+
+.caption small {
+    display: block;
+    color: #e9b9ad;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px auto;
+}
+
+.nav-btn.secondary {
+    background: transparent;
+    color: #ffe4d4;
+    border-color: #e9b9ad;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border: 0;
+    border-radius: 50%;
+    background: #876779;
+    padding: 0;
+}
+
+.dot.active {
+    background: #ffc0b0;
+    transform: scale(1.35);
+}
+
+.continue {
+    display: inline-block;
+    margin: 15px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: #e9a6a4;
+    color: #402b39;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.continue:hover {
+    transform: scale(1.05);
+    background: #ffd0c3;
+}
+
+.footer {
+    text-align: center;
+    color: #d9b3ad;
+    letter-spacing: 3px;
+    font-size: 12px;
+    padding: 20px;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px) scale(.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media(max-width: 600px) {
+    .slideshow { min-height: 280px; }
+    .slide img { max-height: 300px; }
+    .caption { font-size: 17px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="../index.html">← Home</a>
+    <button class="music" onclick="toggleMusic()">♫ Play Music</button>
+</header>
+
+<main class="page">
+
+    <p class="eyebrow">A MEMORY WE KEPT ♡</p>
+    <h1>Our First Meet</h1>
+
+    <p class="intro">
+        A coffee mug, a little letter, a KitKat...
+        and a day that became a beautiful memory.
+    </p>
+
+    <section class="slideshow">
+
+        <div class="slide active">
+            <img src="../images/firstmeet.png" alt="Illustrated memory of the first meeting">
+            <div class="caption">
+                <small>THE FIRST MEET</small>
+                Our first meeting happened at a shopping store.
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="../images/firstmeet.png" alt="Coffee mug and letter memory">
+            <div class="caption">
+                <small>A LITTLE GIFT</small>
+                I had a coffee mug and a letter for him.
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="../images/firstmeet.png" alt="KitKat gift memory">
+            <div class="caption">
+                <small>HIS LITTLE SURPRISE</small>
+                And he gave me a KitKat. A small moment I still remember.
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="../images/firstmeet.png" alt="First phone call memory">
+            <div class="caption">
+                <small>THE FIRST CALL</small>
+                That day, our phone calls began. Our first call lasted more than an hour.
+            </div>
+        </div>
+
+    </section>
+
+    <div class="dots" id="dots">
+        <button class="dot active" aria-label="Slide 1" onclick="showSlide(0)"></button>
+        <button class="dot" aria-label="Slide 2" onclick="showSlide(1)"></button>
+        <button class="dot" aria-label="Slide 3" onclick="showSlide(2)"></button>
+        <button class="dot" aria-label="Slide 4" onclick="showSlide(3)"></button>
+    </div>
+
+    <div class="controls">
+        <button class="nav-btn secondary" onclick="previousSlide()">← Previous</button>
+        <button class="nav-btn" id="pauseBtn" onclick="toggleSlideshow()">Ⅱ Pause</button>
+        <button class="nav-btn" onclick="nextSlide()">Next →</button>
+        <button class="nav-btn secondary" onclick="replay()">↻ Replay</button>
+    </div>
+
+    <a href="lastmeet.html" class="continue">Continue to the next memory ♡ →</a>
+
+</main>
+
+<div class="footer">OUR LITTLE MEMORIES ♡</div>
+
+<audio id="backgroundMusic" loop>
+    <source src="../music/love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const pauseBtn = document.getElementById("pauseBtn");
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.querySelector(".music");
+
+let current = 0;
+let playing = false;
+let timer;
+
+function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === current);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === current);
+    });
+}
+
+function nextSlide() {
+    showSlide(current + 1);
+}
+
+function previousSlide() {
+    showSlide(current - 1);
+}
+
+function startSlideshow() {
+    clearInterval(timer);
+}
+
+function toggleSlideshow() {
+    playing = !playing;
+    pauseBtn.textContent = playing ? "Ⅱ Pause" : "▶ Play";
+    startSlideshow();
+}
+
+function replay() {
+    showSlide(0);
+    playing = true;
+    pauseBtn.textContent = "Ⅱ Pause";
+    startSlideshow();
+}
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play().then(() => {
+            musicButton.textContent = "♫ Pause Music";
+        }).catch(() => alert("Please check your love.mp3 file."));
+    } else {
+        music.pause();
+        musicButton.textContent = "♫ Play Music";
+    }
+}
+
+startSlideshow();
+</script>
+
+</body>
+</html>

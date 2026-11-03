@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Last Meet ♡</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #17152c;
+    color: #fff5f2;
+    font-family: Georgia, serif;
+}
+
+.page {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    overflow: hidden;
+
+    background-image: url("../images/lastmeet.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+header a {
+    color: #ffe0e8;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+.music {
+    border: 1px solid #ffc0d0;
+    background: #ffc0d0;
+    color: #38223d;
+    padding: 11px 20px;
+    border-radius: 30px;
+}
+
+main {
+    flex: 1;
+    width: min(100%, 800px);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 35px 10px;
+}
+
+.eyebrow {
+    color: #ffcbd8;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(40px, 7vw, 70px);
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 20px #000;
+}
+
+.subtitle {
+    font-style: italic;
+    font-size: 19px;
+    color: #ffe0e5;
+    margin-bottom: 28px;
+}
+
+.memory-card {
+    width: min(100%, 650px);
+    min-height: 260px;
+    padding: 30px 25px;
+    border: 1px solid #ffd0d766;
+    border-radius: 25px;
+    background: rgba(23,17,42,.78);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 50px #0007;
+    animation: appear .6s ease;
+}
+
+.scene-icon {
+    font-size: 75px;
+    margin-bottom: 18px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.memory-card h2 {
+    color: #ffcbd8;
+    font-size: 29px;
+    font-weight: normal;
+    margin-bottom: 17px;
+}
+
+.memory-card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #fff1ee;
+}
+
+.progress {
+    width: min(100%, 350px);
+    height: 5px;
+    background: #ffffff45;
+    border-radius: 20px;
+    margin: 25px 0 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 16.66%;
+    background: #ffb6c7;
+    transition: width .4s ease;
+}
+
+.counter {
+    color: #ffe0e8;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.control {
+    border: 1px solid #ffc1d0;
+    border-radius: 30px;
+    background: rgba(255,190,205,.15);
+    color: white;
+    padding: 12px 22px;
+    font-size: 15px;
+}
+
+.control:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.continue {
+    margin-top: 25px;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 14px 25px;
+    background: #ffc0d0;
+    color: #39243e;
+    text-decoration: none;
+    animation: appear .6s ease;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #ffe1e7;
+    letter-spacing: 3px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Drizzling rain */
+.rain {
+    position: fixed;
+    inset: -100px 0 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: .55;
+    background-image:
+      repeating-linear-gradient(
+        105deg,
+        transparent 0 18px,
+        rgba(220,235,255,.45) 19px,
+        transparent 20px 40px
+      );
+    background-size: 45px 100px;
+    animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+    from { background-position: 0 0; }
+    to { background-position: -20px 100px; }
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 500px) {
+    .page { padding: 14px; }
+    .memory-card { padding: 25px 18px; }
+    .memory-card p { font-size: 16px; }
+    .memory-card h2 { font-size: 24px; }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+    <div class="rain"></div>
+
+    <header>
+        <a href="../index.html">← Home</a>
+        <button class="music" id="musicButton" onclick="toggleMusic()">
+            ♫ Play Music
+        </button>
+    </header>
+
+    <main>
+        <p class="eyebrow">A LITTLE MEMORY TO KEEP ♡</p>
+
+        <h1>Our Last Meet</h1>
+
+        <p class="subtitle">A drizzling evening at the railway station...</p>
+
+        <section class="memory-card" id="memoryCard">
+            <div class="scene-icon" id="sceneIcon">🚉🌧️</div>
+            <h2 id="sceneTitle">The Railway Station</h2>
+            <p id="sceneText">
+                It was time for me to leave town.
+                He called and asked me to meet him at the railway station.
+            </p>
+        </section>
+
+        <div class="progress">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <p class="counter" id="counter">Memory 1 of 6</p>
+
+        <div class="controls">
+            <button class="control" id="previousButton"
+                onclick="previousScene()">← Previous</button>
+
+            <button class="control" onclick="replayScene()">↻ Replay</button>
+
+            <button class="control" id="nextButton"
+                onclick="nextScene()">Next →</button>
+        </div>
+
+        <a href="note.html" class="continue" id="continueButton" hidden>
+            Read the final note ♡ →
+        </a>
+    </main>
+
+    <footer>OUR LITTLE MEMORIES ♡</footer>
+
+    <audio id="backgroundMusic" loop>
+        <source src="../music/love.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+const scenes = [
+    {
+        icon: "🚉🌧️",
+        title: "The Railway Station",
+        text: "It was time for me to leave town. He called and asked me to meet him at the railway station."
+    },
+    {
+        icon: "🌧️🖤",
+        title: "He Was Waiting",
+        text: "When I reached the station, he was waiting there. It was drizzling, just little drops of rain."
+    },
+    {
+        icon: "🚉✨",
+        title: "A Few Moments",
+        text: "We spent a little time together at the station, knowing that I would soon have to leave."
+    },
+    {
+        icon: "🚆🌧️",
+        title: "Getting Into the Train",
+        text: "Then it was time for me to board the train. The platform slowly became a memory."
+    },
+    {
+        icon: "🐢🎁",
+        title: "The Little Tortoise",
+        text: "After I got into the train, I had the little tortoise he gave me. A tiny gift that became a lasting memory."
+    },
+    {
+        icon: "🤝🌧️",
+        title: "Our Last Handshake",
+        text: "I gave him a handshake. That was our second and last meet. And that is where this story ends."
+    }
+];
+
+let currentScene = 0;
+
+function showScene() {
+    const scene = scenes[currentScene];
+    const card = document.getElementById("memoryCard");
+
+    card.style.animation = "none";
+    void card.offsetWidth;
+    card.style.animation = "appear .6s ease";
+
+    document.getElementById("sceneIcon").textContent = scene.icon;
+    document.getElementById("sceneTitle").textContent = scene.title;
+    document.getElementById("sceneText").textContent = scene.text;
+
+    document.getElementById("counter").textContent =
+        `Memory ${currentScene + 1} of ${scenes.length}`;
+
+    document.getElementById("progressFill").style.width =
+        `${((currentScene + 1) / scenes.length) * 100}%`;
+
+    document.getElementById("previousButton").disabled =
+        currentScene === 0;
+
+    document.getElementById("nextButton").hidden =
+        currentScene === scenes.length - 1;
+
+    document.getElementById("continueButton").hidden =
+        currentScene !== scenes.length - 1;
+}
+
+function nextScene() {
+    if (currentScene < scenes.length - 1) {
+        currentScene++;
+        showScene();
+    }
+}
+
+function previousScene() {
+    if (currentScene > 0) {
+        currentScene--;
+        showScene();
+    }
+}
+
+function replayScene() {
+    showScene();
+}
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play().then(() => {
+            musicButton.textContent = "♫ Pause Music";
+        }).catch(() => {
+            musicButton.textContent = "♫ Try Music Again";
+        });
+    } else {
+        music.pause();
+        musicButton.textContent = "♫ Play Music";
+    }
+}
+
+showScene();
+</script>
+</body>
+</html>
