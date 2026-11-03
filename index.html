@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Bonds Have No Name ♡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo">Our Little Memories ♡</div>
+        <button id="musicButton" onclick="toggleMusic()">♫ Play Music</button>
+    </header>
+
+    <main class="home">
+        <div class="cover">
+            <img src="images/home.png" alt="A rainy day memory at Ashok Leyland">
+
+            <div class="cover-text">
+                <p>A LITTLE COLLECTION OF MEMORIES</p>
+                <h1>Some Bonds Have No Name</h1>
+               <div class="password-box">
+    <p>A little secret awaits... ♡</p>
+
+    <input
+        type="password"
+        id="secretPassword"
+        placeholder="Enter the secret password"
+    >
+
+    <button onclick="checkPassword()">Unlock My Memories ♡</button>
+
+    <p id="passwordMessage"></p>
+
+    <a href="pages/day1.html" id="storyLink" class="start-button" hidden>
+        Open Our Story ♡
+    </a>
+</div>
+            </div>
+        </div>
+
+        <p class="bottom-note">
+            Some moments end, but never really leave us. ☾
+        </p>
+    </main>
+
+    <audio id="backgroundMusic" loop>
+        <source src="music/love.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
